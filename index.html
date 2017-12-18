@@ -57,7 +57,7 @@
         p = 100;
 
 
-        var arr = [85, 60, 99, 49, 77, 82];
+        var arr0 = [85, 60, 99, 49, 77, 82];
         var body = d3.select("body");
 
         svg();
@@ -124,15 +124,15 @@
 
         function updateAdd() {
             var num = random(20, 100);
-            arr.push(num); //從後方新增元素
-            bind(arr);
+            arr0.push(num); //從後方新增元素
+            bind(arr0);
             render();
         }
 
         function updateDelete() {
             var num = random(20, 100);
-            arr.shift(num); //從前方移除元素
-            bind(arr);
+            arr0.shift(num); //從前方移除元素
+            bind(arr0);
             render();
         }
 
@@ -141,17 +141,18 @@
         }
     </script>
     <br>
+
     <script>
         var arr = [85, 60, 99, 49, 77, 82];
         var w = 900,
             h = 300,
             p = 100;
 
-        svg();
-        bind(arr);
-        render();
+        svg1();
+        bind1(arr);
+        render1();
 
-        function svg() {
+        function svg1() {
             d3.select("body").append("svg")
                 .attr({
                     "id": "svg1",
@@ -160,7 +161,7 @@
                 })
         }
 
-        function bind(dataSet) {
+        function bind1(dataSet) {
 
 
             var selection = d3.select("#svg1").selectAll("rect")
@@ -176,7 +177,7 @@
             selection_t.exit().remove();
         }
 
-        function render() {
+        function render1() {
             var yScale = d3.scale.linear().domain([d3.min(arr), d3.max(arr)]).range([10, 150])
 
             d3.select("#svg1").selectAll("rect")
@@ -214,6 +215,7 @@
                 })
         }
     </script>
+
 
 
 
